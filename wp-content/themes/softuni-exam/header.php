@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
+    <?php wp_head(); ?>
     <!-- Required Meta Tags -->
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Page Title -->
-    <title>Foodfun</title>
+    <title><?php wp_title(); ?></title>
+
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/images/logo/favicon.png" type="image/x-icon">
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/animate-3.7.0.css">
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/font-awesome-4.7.0.min.css">
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/bootstrap-4.1.3.min.css">
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/owl-carousel.min.css">
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/jquery.datetimepicker.min.css">
-    <link rel="stylesheet" href="https://localhost/suexam/wp-content/themes/softuni-exam/assets/css/style.css">
 </head>
 <body>
     <!-- Preloader Starts -->
