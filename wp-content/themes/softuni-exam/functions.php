@@ -31,3 +31,8 @@ function softuni_assets ( $hook  ) {
 
 }
 add_action('wp_enqueue_scripts', 'softuni_assets');
+
+if ( is_404() ) {
+	echo 'yes, we are on 404';
+	die();
+}
