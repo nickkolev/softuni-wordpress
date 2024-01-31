@@ -27,6 +27,16 @@ This is loading the author.php
 
         <?php endwhile; ?>
 
+        <div style="text-align:center;">
+            <?php
+            the_posts_pagination( array(
+                'mid_size'  => 1,
+                'prev_text' => __( 'Previous', 'softuni' ),
+                'next_text' => __( 'Next', 'softuni' ),
+            ) );
+            ?>
+        </div>
+        
     <?php else : ?>
 
         Sorry, there is nothing I can show you.
