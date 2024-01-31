@@ -20,6 +20,10 @@ DISH
                 </p>
             </div>
 
+            <div class="favorite-button">
+                <a class='dishes-favorite' href="javascript:void(0)" data-post-id="<?php echo get_the_ID(); ?>">Add to Favorite</a>
+            </div>
+
         <?php endwhile; ?>
 
     <?php else : ?>
