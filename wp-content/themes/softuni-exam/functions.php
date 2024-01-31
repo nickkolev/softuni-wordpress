@@ -32,7 +32,60 @@ function softuni_assets ( $hook  ) {
 }
 add_action('wp_enqueue_scripts', 'softuni_assets');
 
-if ( is_404() ) {
-	echo 'yes, we are on 404';
-	die();
+ /**
+ * Register my navigation menus
+ *
+ * @return void
+ */
+function softuni_register_nav_menus() {
+	register_nav_menus(
+		array(
+			'primary_menu'     => __( 'Primary Menu', 'softuni' ),
+			'contact_us'       => __( 'Contact Us', 'softuni' ),
+			'important_links'    => __( 'Important Links', 'softuni' ),
+			'opening_hours'    => __( 'Opening Hours', 'softuni' ),
+		)
+	);
 }
+
+add_action( 'after_setup_theme', 'softuni_register_nav_menus' );
+
+ /**
+ * Sidebars
+ *
+ * @return void
+ */
+function softuni_sidebars() {
+/* Register the 'primary' sidebar. */
+	register_sidebar( array (
+		'id' => 'footer-1',
+		'name' => __( 'Footer 01' ),
+		'description' => __( 'A short description of the sidebar.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array (
+		'id' => 'footer-2',
+		'name' => __( 'Footer 02' ),
+		'description' => __( 'A short description of the sidebar.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array (
+		'id' => 'footer-3',
+		'name' => __( 'Footer 03' ),
+		'description' => __( 'A short description of the sidebar.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'softuni_sidebars' );
+	
